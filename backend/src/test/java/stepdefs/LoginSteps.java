@@ -33,11 +33,6 @@ public class LoginSteps {
                 .body(payload)
                 .when()
                 .post("/login");
-                
-    // Store the received token in a shared test context for further use
-    String token = response.jsonPath().getString("token");
-    TestContext.token = token;
-
     }
     
     // Step to send a POST /login request without username and password
