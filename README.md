@@ -69,7 +69,7 @@ npx cucumber-js
 
 ---
 
-## 🔢 API Automation Scenarios (REST-assured)
+## API Automation Scenarios (REST-assured)
 
 API endpoints tested:
 - `POST /login` (valid + invalid payloads)
@@ -110,8 +110,7 @@ CI Workflow files:
 
 ---
 
-## 🚀 Setup Instructions (2 min max)
-
+## Setup Instructions
 ### 1. Clone and Install
 ```bash
 git clone https://github.com/your-username/todo-app-ci-tests.git
@@ -146,9 +145,9 @@ mvn test
 ---
 
 
-## 🙌 Author
+## Author
 
-**Gizem Bayrakci**
+**Gizem Öztürk**
 
 This project was created for a technical interview assessment. Please reach out if you'd like to explore any part further or request improvements.
 
