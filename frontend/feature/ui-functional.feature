@@ -37,4 +37,3 @@ Feature: Functional UI Automation
     And I click the "Add" button
     When I click the "Delete" button for "Delete me"
     Then I should not see "Delete me"
-
