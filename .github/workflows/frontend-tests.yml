@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install root dependencies (if any)
         run: npm install
@@ -33,18 +33,19 @@ jobs:
       - name: Start backend server
         working-directory: backend
         run: |
-          nohup npm run dev &
+          nohup npm run dev > backend.log 2>&1 &
 
       - name: Start frontend server
         working-directory: frontend
         run: |
-          nohup npm run dev &
+          nohup npm run dev > frontend.log 2>&1 &
 
       - name: Wait for servers to be ready
         run: |
-          sleep 10
-          curl --retry 10 --retry-delay 2 --retry-connrefused http://localhost:5173
+          echo "Waiting for backend..."
           curl --retry 10 --retry-delay 2 --retry-connrefused http://localhost:3001
+          echo "Waiting for frontend..."
+          curl --retry 10 --retry-delay 2 --retry-connrefused http://localhost:5173
 
       - name: Run frontend E2E tests
         run: npx cucumber-js
